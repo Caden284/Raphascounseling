@@ -11,6 +11,7 @@ One static page, no build step and no framework. Navigation runs on hash routes 
 ```
 index.html   the whole site
 img/         photography and the logo, from the original site
+vercel.json  caching and security headers for Vercel
 .nojekyll    tells GitHub Pages to serve the files as-is
 ```
 
@@ -20,13 +21,24 @@ Fonts load from Google Fonts. Everything else is local.
 
 Open `index.html` in a browser. That's the whole setup.
 
-## Publish with GitHub Pages
+## Deploy on Vercel
+
+There is no build step, so Vercel serves the repository as-is.
+
+1. Go to vercel.com and sign in with GitHub.
+2. Choose **Add New → Project**, then import `Caden284/Raphascounseling`.
+3. Leave every build setting on its default. Framework preset is **Other**, and the build command and output directory stay empty.
+4. Click **Deploy**.
+
+Every later push to `main` redeploys automatically. Pull requests get their own preview URL.
+
+To use the real domain, open the project's **Settings → Domains**, add `raphascounseling.com`, and follow the DNS records Vercel shows you.
+
+## Deploy on GitHub Pages instead
 
 1. Open **Settings → Pages** in this repository.
 2. Under **Build and deployment**, pick **Deploy from a branch**, branch `main`, folder `/ (root)`.
 3. After a minute the site is live at `https://caden284.github.io/Raphascounseling/`.
-
-To use the real domain instead, point `raphascounseling.com` at GitHub Pages and add the domain under **Settings → Pages → Custom domain**.
 
 ## Before going live
 
