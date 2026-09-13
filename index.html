@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>Rapha's Counseling Center</title>
+<meta name="description" content="Rapha's Counseling Center — online counseling with Ann-Marie Blaise, M.Sc. Counselling Psychology. Rooted in care, nurturing your well-being.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --ground:#F4F6F1; --surface:#FFFFFF; --surface-2:#EAF0E9;
+    --ink:#14251B; --ink-2:#3C4E43; --muted:#5F6F64;
+    --accent:#2E6B45; --accent-deep:#1E4B31; --accent-soft:#DCE8DD;
+    --root:#7A4E2D; --root-soft:#EFE5DA;
+    --line:#CFDACF; --line-strong:#AFC1B1;
+    --on-accent:#F4F6F1;
+    --shadow:0 18px 40px -22px rgba(20,37,27,.35);
+    --radius:20px;
+    --display:'Fraunces',Georgia,'Times New Roman',serif;
+    --body:'Figtree','Segoe UI',Helvetica,Arial,sans-serif;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0F1A14; --surface:#16241B; --surface-2:#1C2D22;
+      --ink:#E9EFE8; --ink-2:#C4D0C5; --muted:#9DB0A1;
+      --accent:#6FBF8A; --accent-deep:#8ED4A6; --accent-soft:#1F3A2A;
+      --root:#D2A177; --root-soft:#2C2119;
+      --line:#2A3C30; --line-strong:#3D5444;
+      --on-accent:#0F1A14;
+      --shadow:0 18px 40px -22px rgba(0,0,0,.7);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0F1A14; --surface:#16241B; --surface-2:#1C2D22;
+    --ink:#E9EFE8; --ink-2:#C4D0C5; --muted:#9DB0A1;
+    --accent:#6FBF8A; --accent-deep:#8ED4A6; --accent-soft:#1F3A2A;
+    --root:#D2A177; --root-soft:#2C2119;
+    --line:#2A3C30; --line-strong:#3D5444;
+    --on-accent:#0F1A14;
+    --shadow:0 18px 40px -22px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:3px}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+  h1{font-size:clamp(2.4rem,6vw,4.4rem);font-variation-settings:'opsz' 144,'SOFT' 40}
+  h2{font-size:clamp(1.9rem,3.8vw,2.9rem);font-variation-settings:'opsz' 96,'SOFT' 30}
+  h3{font-size:1.45rem;font-variation-settings:'opsz' 48,'SOFT' 20}
+  p{margin:0}
+  .eyebrow{font-family:var(--body);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .lede{font-size:1.15rem;color:var(--ink-2);max-width:60ch}
+  .measure{max-width:64ch}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--on-accent);padding:10px 14px;border-radius:8px;z-index:100}
+  .skip:focus{left:8px}
+
+  .wrap{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+  section.block{padding:clamp(64px,8vw,110px) 0}
+  .section-head{display:grid;gap:12px;max-width:62ch;margin-bottom:clamp(32px,4vw,52px)}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:1rem;border:1.5px solid transparent;cursor:pointer;transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease;text-decoration:none;font-family:var(--body);line-height:1.2}
+  .btn:hover{text-decoration:none;transform:translateY(-2px)}
+  .btn-primary{background:var(--accent);color:var(--on-accent);box-shadow:0 10px 24px -12px var(--accent)}
+  .btn-primary:hover{background:var(--accent-deep)}
+  .btn-ghost{border-color:var(--line-strong);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-small{padding:10px 18px;font-size:.92rem}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--ground) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none}
+  .brand:hover{text-decoration:none}
+  .brand svg{width:40px;height:40px}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm b{font-family:var(--display);font-weight:600;font-size:1.25rem;letter-spacing:.01em;color:var(--accent)}
+  .brand .wm span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-top:4px}
+  .nav-links{display:flex;gap:6px;align-items:center;list-style:none;margin:0;padding:0}
+  .nav-links a{color:var(--ink-2);font-weight:500;padding:10px 14px;border-radius:999px;font-size:.98rem}
+  .nav-links a:hover{color:var(--ink);background:var(--surface-2);text-decoration:none}
+  .nav-links a[aria-current="page"]{color:var(--accent);background:var(--accent-soft)}
+  .nav-cta{display:flex;align-items:center;gap:10px}
+  .menu-btn{display:none;background:none;border:1.5px solid var(--line-strong);border-radius:12px;width:44px;height:44px;align-items:center;justify-content:center;color:var(--ink);cursor:pointer}
+  .menu-btn svg{width:22px;height:22px}
+  @media (max-width:900px){
+    .nav-links{display:none}
+    .menu-btn{display:inline-flex}
+    .nav-cta .btn{display:none}
+    .mobile-open .nav-links{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:76px;background:var(--surface);border-bottom:1px solid var(--line);padding:16px 20px 22px;gap:4px;box-shadow:var(--shadow)}
+    .mobile-open .nav-links a{display:block;padding:14px 16px;font-size:1.05rem}
+  }
+
+  /* Hero */
+  .hero{padding:clamp(40px,6vw,88px) 0 0}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .hero h1 em{font-style:italic;color:var(--accent);font-variation-settings:'opsz' 144,'SOFT' 100,'wght' 400}
+  .hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .hero .note{margin-top:22px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.95rem}
+  .hero .note .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .arch{position:relative;justify-self:end;width:min(100%,460px);aspect-ratio:3/4;border-radius:230px 230px 28px 28px;overflow:hidden;box-shadow:var(--shadow);background:var(--surface-2)}
+  .arch img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+  .arch::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+  .hero-caption{position:absolute;left:18px;bottom:18px;right:18px;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(8px);border-radius:14px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.9rem}
+  .hero-caption b{font-family:var(--display);font-size:1.05rem;font-weight:600}
+  .hero-caption span{color:var(--muted)}
+  .roots{display:block;width:100%;height:auto;margin-top:clamp(28px,4vw,56px);color:var(--root);opacity:.8}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .arch{justify-self:start;width:min(100%,400px);aspect-ratio:4/5}
+  }
+
+  /* Proof strip */
+  .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+  .proof ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+  .proof li{padding:22px 24px;display:grid;gap:4px;border-right:1px solid var(--line)}
+  .proof li:last-child{border-right:0}
+  .proof b{font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--ink)}
+  .proof span{color:var(--muted);font-size:.92rem}
+  @media (max-width:900px){.proof ul{grid-template-columns:repeat(2,1fr)}.proof li:nth-child(2){border-right:0}.proof li:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+  @media (max-width:520px){.proof li{padding:18px 16px}}
+
+  /* Services */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-strong)}
+  .svc figure{margin:0;aspect-ratio:16/10;overflow:hidden;background:var(--surface-2)}
+  .svc img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .svc:hover img{transform:scale(1.04)}
+  .svc .body{padding:22px 22px 24px;display:grid;gap:10px;flex:1}
+  .svc .meta{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--muted)}
+  .svc .meta .pill{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:3px 10px;font-weight:600;letter-spacing:.02em}
+  .svc p{color:var(--ink-2);font-size:.98rem}
+  .svc .foot{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .svc .foot a.link{font-weight:600;display:inline-flex;align-items:center;gap:6px}
+  .svc .foot a.link svg{width:16px;height:16px;transition:transform .2s}
+  .svc .foot a.link:hover svg{transform:translateX(3px)}
+  @media (max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:600px){.svc-grid{grid-template-columns:1fr}}
+
+  .callout{margin-top:32px;background:var(--root-soft);border:1px solid color-mix(in srgb,var(--root) 30%,transparent);border-radius:var(--radius);padding:24px 28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+  .callout h3{color:var(--root);font-size:1.3rem}
+  .callout p{color:var(--ink-2)}
+
+  /* About split */
+  .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .about-media{position:relative}
+  .about-media img{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+  .about-media .badge{position:absolute;right:-12px;bottom:-16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);display:grid;gap:2px}
+  .about-media .badge b{font-family:var(--display);font-size:1.3rem;font-weight:600;color:var(--accent)}
+  .about-media .badge span{font-size:.82rem;color:var(--muted)}
+  .about-copy{display:grid;gap:18px}
+  .about-copy p{color:var(--ink-2)}
+  .creds{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  .creds div{border-left:3px solid var(--accent);padding:6px 0 6px 14px}
+  .creds b{display:block;font-weight:600;color:var(--ink)}
+  .creds span{font-size:.9rem;color:var(--muted)}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr}.about-media .badge{right:12px}}
+  @media (max-width:520px){.creds{grid-template-columns:1fr}}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:grid;gap:12px;position:relative}
+  .step .n{width:44px;height:44px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:1.2rem}
+  .step p{color:var(--ink-2);font-size:.98rem}
+  @media (max-width:820px){.steps{grid-template-columns:1fr}}
+
+  /* Testimonials */
+  .quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .quote{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px 30px 26px;display:grid;gap:18px;position:relative}
+  .quote::before{content:"“";position:absolute;top:10px;left:22px;font-family:var(--display);font-size:5rem;line-height:1;color:var(--accent-soft);font-weight:600}
+  .quote blockquote{margin:0;font-family:var(--display);font-size:1.22rem;line-height:1.45;color:var(--ink);position:relative;font-variation-settings:'opsz' 24,'SOFT' 30}
+  .quote figcaption{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.92rem}
+  .quote figcaption .av{width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+  .quote figcaption b{color:var(--ink);font-weight:600}
+  .quote.wide{grid-column:1/-1}
+  @media (max-width:820px){.quotes{grid-template-columns:1fr}}
+
+  /* CTA band */
+  .band{background:var(--accent-deep);color:#F4F6F1;border-radius:28px;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;position:relative;overflow:hidden}
+  :root[data-theme="dark"] .band{background:#1B3A28}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .band{background:#1B3A28}}
+  .band h2{color:#fff}
+  .band p{color:rgba(244,246,241,.8)}
+  .band .contact-list{display:grid;gap:12px}
+  .band .contact-list a{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px;color:#fff;font-weight:500;transition:background .2s}
+  .band .contact-list a:hover{background:rgba(255,255,255,.14);text-decoration:none}
+  .band .contact-list svg{width:22px;height:22px;flex:none}
+  .band .contact-list small{display:block;font-size:.8rem;color:rgba(244,246,241,.7);font-weight:400}
+  .band .leaf{position:absolute;right:-40px;top:-40px;width:260px;height:260px;opacity:.12;color:#fff}
+  @media (max-width:820px){.band{grid-template-columns:1fr}}
+
+  /* Footer */
+  footer.site{border-top:1px solid var(--line);padding:48px 0 32px;color:var(--muted);font-size:.92rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:32px}
+  .foot-grid h4{font-family:var(--body);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px;font-weight:700}
+  .foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .foot-grid a{color:var(--ink-2)}
+  .foot-logo{width:200px;border-radius:10px;background:#fff;padding:6px;margin-bottom:14px}
+  .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:20px}
+  @media (max-width:760px){.foot-grid{grid-template-columns:1fr}}
+
+  /* Inner pages */
+  .page-head{padding:clamp(48px,6vw,88px) 0 clamp(28px,4vw,48px)}
+  .page-head p{margin-top:14px}
+  .story{display:grid;grid-template-columns:1fr 340px;gap:clamp(32px,5vw,72px);align-items:start}
+  .story .text{display:grid;gap:20px;max-width:66ch;color:var(--ink-2);font-size:1.05rem}
+  .story .text p:first-of-type::first-letter{font-family:var(--display);font-size:3.4em;float:left;line-height:.85;padding:6px 10px 0 0;color:var(--accent);font-weight:600}
+  .story aside{position:sticky;top:96px;display:grid;gap:18px}
+  .story aside img{border-radius:var(--radius);aspect-ratio:3/4;object-fit:cover;object-position:50% 15%;box-shadow:var(--shadow)}
+  .timeline{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:2px solid var(--line-strong);margin-left:8px}
+  .timeline li{padding:0 0 22px 22px;position:relative}
+  .timeline li::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--ground)}
+  .timeline b{display:block;font-weight:600;color:var(--ink)}
+  .timeline span{font-size:.9rem;color:var(--muted)}
+  @media (max-width:900px){.story{grid-template-columns:1fr}.story aside{position:static}}
+
+  .svc-list{display:grid;gap:16px}
+  .svc-row{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;transition:border-color .2s,box-shadow .2s}
+  .svc-row:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
+  .svc-row img{border-radius:12px;aspect-ratio:4/3;object-fit:cover;width:100%}
+  .svc-row .info{display:grid;gap:6px}
+  .svc-row .info p{color:var(--ink-2);font-size:.98rem;max-width:60ch}
+  .svc-row .tag{display:inline-flex;gap:8px;align-items:center;font-size:.85rem;color:var(--muted)}
+  .svc-row .tag b{background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px;font-weight:600}
+  .svc-row .act{display:grid;gap:8px;justify-items:end}
+  @media (max-width:820px){.svc-row{grid-template-columns:1fr}.svc-row .act{justify-items:start}}
+
+  .book-grid{display:grid;grid-template-columns:1fr 380px;gap:clamp(32px,5vw,64px);align-items:start}
+  .book-aside{position:sticky;top:96px;display:grid;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .book-aside h3{font-size:1.3rem}
+  .book-aside p{color:var(--ink-2);font-size:.96rem}
+  .book-aside .btn{justify-content:center}
+  .book-aside .or{text-align:center;color:var(--muted);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+  .picker{display:grid;gap:12px}
+  .pick{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;transition:border-color .2s}
+  .pick:hover{border-color:var(--accent)}
+  .pick b{font-family:var(--display);font-size:1.2rem;font-weight:600;display:block}
+  .pick span{color:var(--muted);font-size:.9rem}
+  .pick.first{border-color:var(--accent);background:var(--accent-soft)}
+  .pick.first .ribbon{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:4px;display:block}
+  @media (max-width:900px){.book-grid{grid-template-columns:1fr}.book-aside{position:static}}
+
+  .faq{display:grid;gap:10px;max-width:72ch}
+  details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 22px}
+  summary{cursor:pointer;padding:18px 0;font-weight:600;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--display);font-size:1.5rem;color:var(--accent);transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{padding:0 0 20px;color:var(--ink-2)}
+
+  .legal{max-width:72ch;display:grid;gap:18px;color:var(--ink-2)}
+  .legal h2{font-size:1.6rem;margin-top:18px;color:var(--ink)}
+  .legal h3{font-size:1.15rem;font-family:var(--body);font-weight:700;color:var(--ink);margin-top:6px}
+  .legal ul{margin:0;padding-left:20px;display:grid;gap:8px}
+  .legal .updated{font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .draft{background:var(--root-soft);border:1px solid color-mix(in srgb,var(--root) 35%,transparent);border-radius:14px;padding:16px 20px;color:var(--root);font-weight:500;display:flex;gap:12px;align-items:flex-start}
+  .draft svg{width:22px;height:22px;flex:none;margin-top:2px}
+
+  /* Pages & reveal */
+  [data-page]{display:none}
+  [data-page].active{display:block}
+  .reveal.pre{opacity:0;transform:translateY(18px)}
+  .reveal{transition:opacity .7s ease,transform .7s ease}
+  @media (prefers-reduced-motion: reduce){
+    .reveal,.reveal.pre{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+    .btn,.svc,.svc img{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#/home" aria-label="Rapha's Counseling Center — home">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 4c-3 5-3 9 0 14 3-5 3-9 0-14Z" fill="currentColor" style="color:var(--accent)"/>
+        <path d="M20 18v18M20 24c-3 1-6 4-8 8M20 24c3 1 6 4 8 8M20 29c-2 1-3 3-4 6M20 29c2 1 3 3 4 6" stroke="var(--root)" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M11 14c4 0 7 2 9 4-4 1-7 0-9-4ZM29 14c-4 0-7 2-9 4 4 1 7 0 9-4Z" fill="currentColor" style="color:var(--accent)"/>
+      </svg>
+      <span class="wm"><b>Rapha's</b><span>Counseling Center</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#/home" data-nav="home">Home</a></li>
+        <li><a href="#/about" data-nav="about">About</a></li>
+        <li><a href="#/services" data-nav="services">Services</a></li>
+        <li><a href="#/testimonials" data-nav="testimonials">Testimonials</a></li>
+        <li><a href="#/book" data-nav="book">Book Online</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-small" href="#/book">Book a session</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="primary-menu" aria-label="Open menu" id="menuBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HOME ============ -->
+<div data-page="home" data-title="Rapha's Counseling Center">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Online counseling · Caribbean-rooted, available worldwide</p>
+        <h1>Rooted in care, <em>nurturing</em> your well-being.</h1>
+        <p class="lede" style="margin-top:22px">A safe space to explore your thoughts, feelings, and experiences. Ann-Marie Blaise, M.Sc. Counselling Psychology, walks alongside you at your own pace.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#/book">Book a consultation
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#/services">Explore services</a>
+        </div>
+        <p class="note"><span class="dot"></span>Sessions held online. First-time clients begin with a 30-minute consultation.</p>
+      </div>
+      <figure class="arch" style="margin:0">
+        <img src="img/portrait.jpg" alt="Ann-Marie Blaise seated beside a white garden fountain, wearing a bright patterned dress" width="900" height="1350" fetchpriority="high">
+        <figcaption class="hero-caption"><b>Ann-Marie Blaise</b><span>B.Sc. · M.Sc. Counselling Psychology</span></figcaption>
+      </figure>
+    </div>
+    <div class="wrap">
+      <svg class="roots" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <path d="M600 0v40c0 20-12 30-30 44s-30 24-70 30M600 40c0 20 12 30 30 44s30 24 70 30M570 84c-20 10-50 14-90 12M630 84c20 10 50 14 90 12M600 20c-30 6-70 10-120 8M600 20c30 6 70 10 120 8M480 28c-40 4-90 0-150 20M720 28c40 4 90 0 150 20M330 48c-40 12-80 26-140 30M870 48c40 12 80 26 140 30M480 100c-40 8-90 10-140 6M720 100c40 8 90 10 140 6"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Practice at a glance">
+    <div class="wrap">
+      <ul>
+        <li><b>Online, anywhere</b><span>Video sessions from wherever you feel safe</span></li>
+        <li><b>B.Sc. &amp; M.Sc.</b><span>Behavioral Science · Counselling Psychology</span></li>
+        <li><b>30+ years</b><span>In education, guidance, and care coordination</span></li>
+        <li><b>30 min to start</b><span>A short consultation before any therapy plan</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Our services</p>
+        <h2>Support shaped around the season you're in.</h2>
+        <p class="lede">Every service is available online. Choose the one that fits, or start with a consultation and we'll find it together.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc reveal">
+          <figure><img src="img/svc-1.jpg" alt="A woman in conversation with a care professional by a window" loading="lazy"></figure>
+          <div class="body">
+            <div class="meta"><span class="pill">30 min</span><span>Available online</span></div>
+            <h3>Consultation Session</h3>
+            <p>Empower your path to clarity. A first conversation to understand what you need and how we can work together.</p>
+            <div class="foot"><a class="link" href="#/book/consultation">Request to book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <figure><img src="img/svc-2.jpg" alt="A small group seated in a circle in a bright room" loading="lazy"></figure>
+          <div class="body">
+            <div class="meta"><span class="pill">1 hr</span><span>Available online</span></div>
+            <h3>Individual Therapy</h3>
+            <p>Personalized guidance tailored to you. One-on-one sessions that move at a pace you set.</p>
+            <div class="foot"><a class="link" href="#/book/individual">Request to book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <figure><img src="img/svc-3.jpg" alt="Friends sharing a picnic on a sunlit dock by the water" loading="lazy"></figure>
+          <div class="body">
+            <div class="meta"><span class="pill">1 hr 30 min</span><span>Available online</span></div>
+            <h3>Couples Counseling</h3>
+            <p>Couples therapy for stronger bonds. Honest, compassionate space to rebuild understanding together.</p>
+            <div class="foot"><a class="link" href="#/book/couples">Request to book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <figure><img src="img/svc-4.jpg" alt="Professionals listening attentively in a seminar room" loading="lazy"></figure>
+          <div class="body">
+            <div class="meta"><span class="pill">1 hr</span><span>Available online</span></div>
+            <h3>Professional Development</h3>
+            <p>Expert solutions for your workplace challenges. Guidance for educators, teams, and leaders.</p>
+            <div class="foot"><a class="link" href="#/book/professional">Request to book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <figure><img src="img/svc-5.jpg" alt="A group of young adults smiling together outdoors" loading="lazy"></figure>
+          <div class="body">
+            <div class="meta"><span class="pill">1 hr</span><span>Available online</span></div>
+            <h3>Target Groups</h3>
+            <p>Guiding your journey to well-being and growth. Focused sessions for specific groups and shared experiences.</p>
+            <div class="foot"><a class="link" href="#/book/groups">Request to book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <figure><img src="img/svc-6.jpg" alt="A caregiver smiling warmly with an older man" loading="lazy"></figure>
+          <div class="body">
+            <div class="meta"><span class="pill">1 hr</span><span>By request</span></div>
+            <h3>Palliative Care</h3>
+            <p>Compassionate therapy for comfort and well-being. Emotional support for patients and the families who love them.</p>
+            <div class="foot"><a class="link" href="#/book/palliative">Request to book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+      </div>
+      <div class="callout reveal">
+        <div>
+          <h3>First time here?</h3>
+          <p>Book a 30-minute consultation first. It's the gentlest way to begin.</p>
+        </div>
+        <a class="btn btn-primary" href="#/book/consultation">Book a consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="background:var(--surface);border-block:1px solid var(--line)">
+    <div class="wrap about-grid">
+      <div class="about-media reveal">
+        <img src="img/portrait-wide.jpg" alt="Ann-Marie Blaise smiling in a garden" loading="lazy" width="1400" height="1050">
+        <div class="badge"><b>Trinidad &amp; Tobago</b><span>Born and raised · now serving the Dutch Caribbean and beyond</span></div>
+      </div>
+      <div class="about-copy reveal">
+        <p class="eyebrow">About Ann-Marie</p>
+        <h2>A passionate advocate for dignity and respect.</h2>
+        <p>Ann-Marie Blaise built her career on a foundation of resilience and curiosity. Growing up in Trinidad and Tobago, her early experiences with bullying fueled a deep interest in human behavior, which led her to a B.Sc. in Behavioral Science and an M.Sc. in Counselling Psychology.</p>
+        <p>Her journey includes roles as a Guidance Officer, lecturer, and Care Coordinator, culminating in her current position as a school social worker. She continues to champion the belief that every person, regardless of their background, deserves a voice and to be treated with dignity.</p>
+        <div class="creds">
+          <div><b>M.Sc. Counselling Psychology</b><span>Graduate training in therapeutic practice</span></div>
+          <div><b>B.Sc. Behavioral Science</b><span>Foundation in why people do what they do</span></div>
+          <div><b>12 years Guidance Officer</b><span>Supporting students and families</span></div>
+          <div><b>10 years adjunct lecturer</b><span>School of Social Sciences</span></div>
+        </div>
+        <div><a class="btn btn-ghost" href="#/about">Read her full story</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">How it works</p>
+        <h2>Three gentle steps to your first session.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="n">1</span><h3>Request a consultation</h3><p>Pick a date and time that works for you on the booking calendar, or send a WhatsApp message. It takes about two minutes.</p></div>
+        <div class="step reveal"><span class="n">2</span><h3>Meet online, from your safe place</h3><p>A 30-minute video conversation to understand your needs and answer your questions. No pressure, no commitment.</p></div>
+        <div class="step reveal"><span class="n">3</span><h3>Continue at your own pace</h3><p>Together we choose the service and rhythm that fits: weekly, fortnightly, or as you need it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Testimonials</p>
+        <h2>Voices of healing and growth.</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote reveal">
+          <blockquote>Working with Ms. Ann Marie Blaise has been a transformative experience. Right from our very first session, she became a steady source of comfort and genuine understanding in my life.</blockquote>
+          <figcaption><span class="av">AT</span><span><b>A.T.</b> · Trinidad and Tobago</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <blockquote>Anne-Marie Blaise has been a true anchor in my life. She's guided me through work-related stress and personal relationship challenges with a balance of honesty, compassion, and insight that's rare to find. Her presence feels like that of a wise mother, nurturing yet firm, soft yet truthful.</blockquote>
+          <figcaption><span class="av">RH</span><span><b>R.H.</b> · St. Eustatius</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <blockquote>My experience with Ms. Blaise has truly been transformational. She listens attentively to my needs and allows me to take the healing process at my own pace. Her being a Christian added a bonus point for me because she gives great practical advice and solutions, but also speaks life into me through God's word.</blockquote>
+          <figcaption><span class="av">O</span><span><b>O.</b> · Jamaica</span></figcaption>
+        </figure>
+        <figure class="quote reveal" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:var(--accent-soft);border-color:transparent">
+          <h3 style="position:relative">Read more voices</h3>
+          <p style="color:var(--ink-2);position:relative">Clients from the Caribbean to the Netherlands share what changed for them.</p>
+          <a class="btn btn-ghost btn-small" href="#/testimonials" style="position:relative">All testimonials</a>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="band reveal">
+        <svg class="leaf" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M50 5C30 25 20 50 25 80c30-5 55-25 70-55C75 10 60 5 50 5Zm-2 20c-5 15-8 30-8 45 10-10 18-25 22-42-5-1-9-2-14-3Z"/></svg>
+        <div>
+          <p class="eyebrow" style="color:#9FD6B4">Ready when you are</p>
+          <h2>Take the first step today.</h2>
+          <p style="margin-top:14px;max-width:48ch">Reach out however feels most comfortable. Messages are answered personally by Ann-Marie.</p>
+        </div>
+        <div class="contact-list">
+          <a href="https://wa.me/5994167333" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3c.2-.6.2-1.1.2-1.2-.1-.2-.3-.3-.6-.4Z"/></svg>
+            <span>Call or WhatsApp<small>+599 416 7333</small></span>
+          </a>
+          <a href="mailto:galemarieblades@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span>Email<small>galemarieblades@gmail.com</small></span>
+          </a>
+          <a href="#/book">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+            <span>Book online<small>Pick a date on the calendar</small></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div data-page="about" data-title="About Ann-Marie Blaise · Rapha's Counseling Center">
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h1>I am Ann-Marie Blaise.</h1>
+      <p class="lede">Counselor, educator, mother, grandmother, and a lifelong believer that dignity is the foundation upon which respect is built.</p>
+    </div>
+  </section>
+  <section class="block" style="padding-top:0">
+    <div class="wrap story">
+      <div class="text">
+        <p class="eyebrow" style="margin-bottom:0">My story</p>
+        <p>I, Ann-Marie Blaise, was born on July 26th, 1961 in the island of Trinidad and Tobago as the last of nine children to my mother. My early years, as I recall, were ones of just sufficient, never extras. My mother, a single parent, ensured that we were clean, fed and schooled. I grew to appreciate the sacrifices she made and embraced every opportunity given to ensure that I received maximum benefit of what she had to offer.</p>
+        <p>At Primary and, to a lesser extent, Secondary school, I was the recipient of bullying, primarily due to the color of my skin and the texture of my hair. This resulted in me having very few friends, which proved to be a blessing in disguise as I was plunged head on into my studies, often surfacing at the top of my class or close enough to the top. These negative experiences, however, fuelled thoughts about why people behave the way they do, why they treat others in such a demeaning manner.</p>
+        <p>While my mom and siblings encouraged me to get into a career of nursing, I preferred to delve a little deeper into the thought processes of humankind. This was influenced partly because of my being reared in a single-parent household and the challenges that came with that, coupled with the fact that I felt marginalized, being a person of color with short 4C hair, coming from a home of lower socioeconomic status and having to work doubly, triply hard to be seen and heard, not only by my peers but also by some teachers in both Primary and Secondary school. I spent 15 years in the education system as a Primary school teacher before pursuing my first degree, a B.Sc. in Behavioral Science, followed by an M.Sc. in Counselling Psychology. My training as a Primary school teacher whetted my appetite for greater knowledge.</p>
+        <p>While remaining in the field of education, I switched professions in 2007, becoming a Guidance Officer, a position I held for 12 years. I have also been an adjunct lecturer at one of the nation's Universities in the School of Social Sciences for 10 years. In 2019, I accepted a position as Care Coordinator, a position I held for 5 years on an island in the Dutch Caribbean. This heightened my awareness, knowledge and expertise in the field, as I was given the opportunity to travel to Holland to be exposed to different methods. I am currently the school Social Worker at another school in the same region.</p>
+        <p>I am the proud mother of three adult daughters and the grandmother to two grandchildren. I enjoy passing my free time by sewing, a skill I am certified in from one of our technical institutes; singing, which I partially inherited but went on to master through vocal training; doing Sudoku; and walking. I believe that all persons, regardless of their skin color or background, should have a voice and be treated with dignity and respect, as dignity is the foundation upon which respect is built.</p>
+        <div style="margin-top:10px"><a class="btn btn-primary" href="#/book">Book a session with Ann-Marie</a></div>
+      </div>
+      <aside>
+        <img src="img/portrait.jpg" alt="Ann-Marie Blaise beside a garden fountain" loading="lazy">
+        <div>
+          <p class="eyebrow">Career path</p>
+          <ul class="timeline">
+            <li><b>Primary school teacher</b><span>15 years in the classroom, Trinidad and Tobago</span></li>
+            <li><b>B.Sc. Behavioral Science → M.Sc. Counselling Psychology</b><span>Formal training in human behavior and therapy</span></li>
+            <li><b>Guidance Officer, from 2007</b><span>12 years supporting students and families</span></li>
+            <li><b>Adjunct lecturer</b><span>10 years, School of Social Sciences</span></li>
+            <li><b>Care Coordinator, from 2019</b><span>5 years in the Dutch Caribbean, with training in Holland</span></li>
+            <li><b>School Social Worker</b><span>Current role · Dutch Caribbean</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<div data-page="services" data-title="Services · Rapha's Counseling Center">
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Service list</p>
+      <h1>Six ways we can work together.</h1>
+      <p class="lede">All sessions are held online. Durations are fixed so you always know what to expect. First-time clients start with a consultation.</p>
+    </div>
+  </section>
+  <section class="block" style="padding-top:0">
+    <div class="wrap svc-list">
+      <article class="svc-row reveal">
+        <img src="img/svc-1.jpg" alt="" loading="lazy">
+        <div class="info"><span class="tag"><b>30 min</b> Available online</span><h3>Consultation Session</h3><p>Empower your path to clarity. We talk through what brought you here, what you hope to change, and which service fits best. Required for first-time clients.</p></div>
+        <div class="act"><a class="btn btn-primary btn-small" href="https://www.raphascounseling.com/booking-calendar/consultation-session" target="_blank" rel="noopener">Request to book</a></div>
+      </article>
+      <article class="svc-row reveal">
+        <img src="img/svc-2.jpg" alt="" loading="lazy">
+        <div class="info"><span class="tag"><b>1 hr</b> Available online</span><h3>Individual Therapy</h3><p>Personalized guidance tailored to you. Regular one-on-one sessions for stress, relationships, life transitions, and whatever you are carrying.</p></div>
+        <div class="act"><a class="btn btn-primary btn-small" href="https://www.raphascounseling.com/booking-calendar/individual-therapy" target="_blank" rel="noopener">Request to book</a></div>
+      </article>
+      <article class="svc-row reveal">
+        <img src="img/svc-3.jpg" alt="" loading="lazy">
+        <div class="info"><span class="tag"><b>1 hr 30 min</b> Available online</span><h3>Couples Counseling</h3><p>Couples therapy for stronger bonds. A longer session so both voices are heard, with honesty and compassion in equal measure.</p></div>
+        <div class="act"><a class="btn btn-primary btn-small" href="https://www.raphascounseling.com/booking-calendar/couples-counseling" target="_blank" rel="noopener">Request to book</a></div>
+      </article>
+      <article class="svc-row reveal">
+        <img src="img/svc-4.jpg" alt="" loading="lazy">
+        <div class="info"><span class="tag"><b>1 hr</b> Available online</span><h3>Professional Development</h3><p>Expert solutions for your workplace challenges. Drawing on decades in education and care coordination to support educators, leaders, and teams.</p></div>
+        <div class="act"><a class="btn btn-primary btn-small" href="https://www.raphascounseling.com/booking-calendar/professional-development" target="_blank" rel="noopener">Request to book</a></div>
+      </article>
+      <article class="svc-row reveal">
+        <img src="img/svc-5.jpg" alt="" loading="lazy">
+        <div class="info"><span class="tag"><b>1 hr</b> Available online</span><h3>Target Groups</h3><p>Guiding your journey to well-being and growth. Sessions designed for a specific group with a shared experience or goal.</p></div>
+        <div class="act"><a class="btn btn-primary btn-small" href="https://www.raphascounseling.com/booking-calendar/target-groups" target="_blank" rel="noopener">Request to book</a></div>
+      </article>
+      <article class="svc-row reveal">
+        <img src="img/svc-6.jpg" alt="" loading="lazy">
+        <div class="info"><span class="tag"><b>1 hr</b> By request</span><h3>Palliative Care</h3><p>Compassionate therapy for comfort and well-being in palliative care. Emotional support for patients facing serious illness, and for the families walking with them.</p></div>
+        <div class="act"><a class="btn btn-primary btn-small" href="https://www.raphascounseling.com/booking-calendar/palliative-care" target="_blank" rel="noopener">Request to book</a></div>
+      </article>
+    </div>
+    <div class="wrap">
+      <div class="callout reveal">
+        <div><h3>Not sure where to start?</h3><p>Send a WhatsApp message and Ann-Marie will help you choose.</p></div>
+        <a class="btn btn-ghost" href="https://wa.me/5994167333" target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ TESTIMONIALS ============ -->
+<div data-page="testimonials" data-title="Testimonials · Rapha's Counseling Center">
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Testimonials</p>
+      <h1>Voices of healing and growth.</h1>
+      <p class="lede">Words from clients across the Caribbean and Europe, shared with their permission and initials only.</p>
+    </div>
+  </section>
+  <section class="block" style="padding-top:0">
+    <div class="wrap quotes">
+      <figure class="quote wide reveal">
+        <blockquote>My experience with Ms. Blaise has truly been transformational. She listens attentively to my needs and allows me to take the healing process at my own pace. Her being a Christian added a bonus point for me because she gives great practical advice and solutions, but also speaks life into me through God's word. Therapy isn't always easy, but working with Ms. Blaise has made a real difference in my life. That's something I don't take for granted.</blockquote>
+        <figcaption><span class="av">KB</span><span><b>K.B.S.</b> · Netherlands</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote>Working with Ms. Ann Marie Blaise has been a transformative experience. Right from our very first session, she became a steady source of comfort and genuine understanding in my life.</blockquote>
+        <figcaption><span class="av">AT</span><span><b>A.T.</b> · Trinidad and Tobago</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote>Anne-Marie Blaise has been a true anchor in my life. She's guided me through work-related stress and personal relationship challenges with a balance of honesty, compassion, and insight that's rare to find. Her presence feels like that of a wise mother, nurturing yet firm, soft yet truthful.</blockquote>
+        <figcaption><span class="av">RH</span><span><b>R.H.</b> · St. Eustatius</span></figcaption>
+      </figure>
+    </div>
+    <div class="wrap" style="margin-top:40px">
+      <div class="callout reveal">
+        <div><h3>Your story could be next.</h3><p>Begin with a 30-minute consultation.</p></div>
+        <a class="btn btn-primary" href="#/book/consultation">Book a consultation</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ BOOK ============ -->
+<div data-page="book" data-title="Book Online · Rapha's Counseling Center">
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Book online</p>
+      <h1>Choose a service, pick a time.</h1>
+      <p class="lede">Each “Request to book” opens the live booking calendar where you can see availability and request the date and time that works for you.</p>
+    </div>
+  </section>
+  <section class="block" style="padding-top:0">
+    <div class="wrap book-grid">
+      <div class="picker">
+        <a class="pick first" id="consultation" href="https://www.raphascounseling.com/booking-calendar/consultation-session" target="_blank" rel="noopener">
+          <div><span class="ribbon">Start here if you're new</span><b>Consultation Session</b><span>30 min · Available online</span></div>
+          <span class="btn btn-primary btn-small">Request to book</span>
+        </a>
+        <a class="pick" id="individual" href="https://www.raphascounseling.com/booking-calendar/individual-therapy" target="_blank" rel="noopener">
+          <div><b>Individual Therapy</b><span>1 hr · Available online</span></div>
+          <span class="btn btn-ghost btn-small">Request to book</span>
+        </a>
+        <a class="pick" id="couples" href="https://www.raphascounseling.com/booking-calendar/couples-counseling" target="_blank" rel="noopener">
+          <div><b>Couples Counseling</b><span>1 hr 30 min · Available online</span></div>
+          <span class="btn btn-ghost btn-small">Request to book</span>
+        </a>
+        <a class="pick" id="professional" href="https://www.raphascounseling.com/booking-calendar/professional-development" target="_blank" rel="noopener">
+          <div><b>Professional Development</b><span>1 hr · Available online</span></div>
+          <span class="btn btn-ghost btn-small">Request to book</span>
+        </a>
+        <a class="pick" id="groups" href="https://www.raphascounseling.com/booking-calendar/target-groups" target="_blank" rel="noopener">
+          <div><b>Target Groups</b><span>1 hr · Available online</span></div>
+          <span class="btn btn-ghost btn-small">Request to book</span>
+        </a>
+        <a class="pick" id="palliative" href="https://www.raphascounseling.com/booking-calendar/palliative-care" target="_blank" rel="noopener">
+          <div><b>Palliative Care</b><span>1 hr · By request</span></div>
+          <span class="btn btn-ghost btn-small">Request to book</span>
+        </a>
+
+        <div style="margin-top:36px">
+          <p class="eyebrow">Good to know</p>
+          <div class="faq">
+            <details><summary>Are you a first-time client?</summary><p>Yes, please book a Consultation Session first. It is a 30-minute conversation to understand your needs before we plan any ongoing therapy.</p></details>
+            <details><summary>Where do sessions take place?</summary><p>All services are available online by video, so you can join from wherever you feel safe and private. Ann-Marie works from the Dutch Caribbean and serves clients across the Caribbean, the Netherlands, and beyond.</p></details>
+            <details><summary>What does “Request to book” mean?</summary><p>You choose a preferred date and time on the calendar and send the request. Ann-Marie confirms it personally, so you'll hear back before anything is finalized.</p></details>
+            <details><summary>What if I'd rather talk first?</summary><p>Message or call on WhatsApp at +599 416 7333, or email galemarieblades@gmail.com. Either is a perfectly good way to begin.</p></details>
+          </div>
+        </div>
+      </div>
+      <aside class="book-aside">
+        <h3>Prefer to reach out directly?</h3>
+        <p>Every message is read and answered personally by Ann-Marie.</p>
+        <a class="btn btn-primary" href="https://wa.me/5994167333" target="_blank" rel="noopener">Call or WhatsApp +599 416 7333</a>
+        <span class="or">or</span>
+        <a class="btn btn-ghost" href="mailto:galemarieblades@gmail.com">Email galemarieblades@gmail.com</a>
+        <p style="font-size:.85rem;color:var(--muted);margin-top:6px">Your privacy matters. Read how your information is protected in our <a href="#/privacy">Privacy Policy</a>.</p>
+      </aside>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PRIVACY ============ -->
+<div data-page="privacy" data-title="Privacy Policy · Rapha's Counseling Center">
+  <section class="page-head"><div class="wrap"><p class="eyebrow">Legal</p><h1>Privacy Policy</h1><p class="updated" style="margin-top:14px">Last updated: August 2025</p></div></section>
+  <section class="block" style="padding-top:0"><div class="wrap legal">
+    <p>Welcome to the website of Rapha's Counseling. We are committed to protecting the privacy and confidentiality of our clients and website visitors. This Privacy Policy outlines how we collect, use, and protect your personal and protected health information, both through this website and in the course of providing our therapeutic services. By using this website, you agree to the terms of this Privacy Policy.</p>
+    <h2>1. Information we collect</h2>
+    <h3>A. Website visitors</h3>
+    <ul>
+      <li><strong>Log data:</strong> your IP address, browser type, operating system, and the pages you visit. We use this to analyze traffic, improve functionality, and ensure security.</li>
+      <li><strong>Cookies:</strong> small data files stored on your device to enhance your browsing experience. You can disable cookies in your browser settings, though some features may not function properly.</li>
+      <li><strong>Contact form submissions:</strong> your name, email address, phone number, and message, used solely to respond to your inquiry.</li>
+    </ul>
+    <h3>B. Clients and prospective clients</h3>
+    <ul>
+      <li><strong>Contact information:</strong> name, address, phone number, and email.</li>
+      <li><strong>Demographic information:</strong> date of birth, age, gender, and other relevant personal characteristics.</li>
+      <li><strong>Health and medical information:</strong> presenting issues, health history, diagnoses, treatment plans, and session notes.</li>
+      <li><strong>Billing and insurance information:</strong> insurance provider, policy number, and billing details.</li>
+      <li><strong>Other information</strong> you choose to share during your therapeutic journey.</li>
+    </ul>
+    <h2>2. How we use your information</h2>
+    <ul>
+      <li><strong>To provide therapeutic services:</strong> delivering high-quality, personalized care.</li>
+      <li><strong>To communicate with you:</strong> scheduling appointments, sending reminders, and responding to inquiries.</li>
+      <li><strong>For billing and administration:</strong> processing payments, filing insurance claims, and managing your client file.</li>
+      <li><strong>To improve our website:</strong> analyzing trends and enhancing the user experience.</li>
+      <li><strong>Legal and ethical obligations:</strong> complying with laws, ethical guidelines, and professional standards.</li>
+    </ul>
+    <h2>3. Confidentiality and disclosure of protected health information</h2>
+    <p>Your information will not be disclosed to anyone without your written consent, with the following exceptions as permitted or required by law:</p>
+    <ul>
+      <li><strong>Duty to warn and protect:</strong> if we believe there is a clear and imminent danger to yourself or others, we are obligated to take steps to ensure safety, which may include disclosing information to relevant authorities.</li>
+      <li><strong>Abuse and neglect:</strong> we are mandated reporters for suspected or actual abuse or neglect of a child, elderly person, or disabled person.</li>
+      <li><strong>Court orders:</strong> a valid court order or subpoena may require disclosure of records.</li>
+      <li><strong>Supervision and consultation:</strong> we may consult other professionals to improve care, with all identifying information removed.</li>
+      <li><strong>Billing and insurance:</strong> limited information may be shared with your insurance provider to process claims.</li>
+    </ul>
+    <h2>4. Your rights regarding your information</h2>
+    <ul>
+      <li><strong>Access your records:</strong> request a copy in writing and we will provide it in a timely manner.</li>
+      <li><strong>Request an amendment</strong> if you believe your records contain incorrect information.</li>
+      <li><strong>Request confidential communications</strong> in a specific way or at a specific location.</li>
+      <li><strong>Request a restriction</strong> on how certain information is used or disclosed. We will carefully consider every request, though we are not required to agree to all of them.</li>
+      <li><strong>File a complaint</strong> with our office or with the relevant government body if you believe your privacy rights have been violated.</li>
+    </ul>
+    <h2>5. Data security</h2>
+    <p>We take reasonable administrative, technical, and physical safeguards to protect your information from unauthorized access, use, or disclosure, including passwords, firewalls, and encryption for digital records, and locked, secure storage for physical records.</p>
+    <h2>6. Third-party links</h2>
+    <p>Our website may contain links to third-party websites. We are not responsible for their privacy practices or content and encourage you to review their policies.</p>
+    <h2>7. Changes to this policy</h2>
+    <p>We may update this Privacy Policy at any time. Changes will be posted on this page with an updated date.</p>
+    <h2>8. Contact us</h2>
+    <p>Questions or concerns? Call or WhatsApp <a href="https://wa.me/5994167333">+599 416 7333</a> or email <a href="mailto:galemarieblades@gmail.com">galemarieblades@gmail.com</a>.</p>
+  </div></section>
+</div>
+
+<!-- ============ ACCESSIBILITY ============ -->
+<div data-page="accessibility" data-title="Accessibility Statement · Rapha's Counseling Center">
+  <section class="page-head"><div class="wrap"><p class="eyebrow">Legal</p><h1>Accessibility Statement</h1><p class="updated" style="margin-top:14px">Last updated: August 2025</p></div></section>
+  <section class="block" style="padding-top:0"><div class="wrap legal">
+    <p>We at Rapha's Counseling are working to make our site, raphascounseling.com, accessible to people with disabilities. We believe that mental health support should be available to all, and we are dedicated to making our digital presence as inclusive as possible.</p>
+    <h2>1. Our commitment to accessibility</h2>
+    <p>Our goal is to meet and, where possible, exceed the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. We are committed to:</p>
+    <ul>
+      <li><strong>Continuous improvement:</strong> we regularly review the website to identify and resolve barriers.</li>
+      <li><strong>User-centered design:</strong> accessibility is built in from the beginning.</li>
+      <li><strong>An inclusive experience</strong> for people who use screen readers, magnifiers, and voice recognition software.</li>
+    </ul>
+    <h2>2. Key features and measures</h2>
+    <ul>
+      <li><strong>High contrast</strong> color palette and <strong>resizable text</strong> that works with browser zoom.</li>
+      <li><strong>Clear fonts</strong> and a <strong>logical heading structure</strong> for screen readers.</li>
+      <li><strong>Keyboard navigability</strong> for every link, button, and form.</li>
+      <li><strong>Descriptive links</strong> and <strong>alternative text</strong> for all non-decorative images.</li>
+      <li><strong>Captions or transcripts</strong> wherever video or audio is used.</li>
+      <li><strong>Clearly labeled form fields</strong> with helpful error messages.</li>
+    </ul>
+    <h2>3. Known limitations</h2>
+    <ul>
+      <li><strong>Third-party content:</strong> scheduling platforms and payment processors are chosen carefully, but we cannot guarantee the accessibility of their platforms.</li>
+      <li><strong>Legacy content:</strong> some older content may not fully conform; we are actively reviewing and updating it.</li>
+    </ul>
+    <h2>4. Feedback and support</h2>
+    <p>If you encounter any accessibility barriers, please contact us by email at <a href="mailto:galemarieblades@gmail.com">galemarieblades@gmail.com</a> or by phone at <a href="https://wa.me/5994167333">+599 416 7333</a>. We take all feedback seriously and will respond in a timely manner.</p>
+    <h2>5. Accessibility for our therapeutic services</h2>
+    <ul>
+      <li><strong>Telehealth options</strong> for clients with mobility challenges or who prefer to attend from a comfortable, accessible location.</li>
+      <li><strong>Communication preferences:</strong> we are willing to discuss and adapt communication methods to suit your needs.</li>
+    </ul>
+    <p>Thank you for visiting Rapha's Counseling. We are dedicated to providing a welcoming and inclusive experience for all.</p>
+  </div></section>
+</div>
+
+<!-- ============ TERMS ============ -->
+<div data-page="terms" data-title="Terms &amp; Conditions · Rapha's Counseling Center">
+  <section class="page-head"><div class="wrap"><p class="eyebrow">Legal</p><h1>Terms &amp; Conditions</h1></div></section>
+  <section class="block" style="padding-top:0"><div class="wrap legal">
+    <div class="draft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg><span>Draft outline. The previous site's Terms page still contained the website builder's placeholder text, so this page needs the practice's final wording before launch.</span></div>
+    <h2>Scope of services</h2><p>Rapha's Counseling Center provides online counseling and related services as described on the Services page. Counseling is not a substitute for emergency care; if you are in immediate danger, contact local emergency services.</p>
+    <h2>Booking and confirmation</h2><p>Booking requests are confirmed personally. A session is only scheduled once you receive confirmation.</p>
+    <h2>Cancellations and rescheduling</h2><p>[Notice period and any fees to be confirmed by the practice.]</p>
+    <h2>Confidentiality</h2><p>Your information is handled as described in the <a href="#/privacy">Privacy Policy</a>, including the legally required exceptions listed there.</p>
+    <h2>Contact</h2><p>Questions about these terms: <a href="mailto:galemarieblades@gmail.com">galemarieblades@gmail.com</a>.</p>
+  </div></section>
+</div>
+
+<!-- ============ REFUND ============ -->
+<div data-page="refund" data-title="Refund Policy · Rapha's Counseling Center">
+  <section class="page-head"><div class="wrap"><p class="eyebrow">Legal</p><h1>Refund Policy</h1></div></section>
+  <section class="block" style="padding-top:0"><div class="wrap legal">
+    <div class="draft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg><span>Draft outline. The previous site's Refund page still contained the website builder's placeholder text, so this page needs the practice's final wording before launch.</span></div>
+    <h2>Timeframe</h2><p>[How far in advance a cancellation must be made to qualify for a refund.]</p>
+    <h2>Full or partial refunds</h2><p>[Whether refunds are full or partial, and under what conditions.]</p>
+    <h2>How to request a refund</h2><p>Contact <a href="mailto:galemarieblades@gmail.com">galemarieblades@gmail.com</a> or WhatsApp <a href="https://wa.me/5994167333">+599 416 7333</a> with your booking details.</p>
+  </div></section>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img class="foot-logo" src="img/logo.jpg" alt="Rapha's Counseling Center logo" loading="lazy" width="900" height="327">
+        <p class="measure">Rooted in care, nurturing your well-being. Online counseling with Ann-Marie Blaise, M.Sc. Counselling Psychology.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#/about">About Ann-Marie</a></li>
+          <li><a href="#/services">Services</a></li>
+          <li><a href="#/testimonials">Testimonials</a></li>
+          <li><a href="#/book">Book online</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/5994167333" target="_blank" rel="noopener">Call / WhatsApp +599 416 7333</a></li>
+          <li><a href="mailto:galemarieblades@gmail.com">galemarieblades@gmail.com</a></li>
+        </ul>
+        <h4 style="margin-top:20px">Legal</h4>
+        <ul>
+          <li><a href="#/privacy">Privacy Policy</a></li>
+          <li><a href="#/accessibility">Accessibility Statement</a></li>
+          <li><a href="#/terms">Terms &amp; Conditions</a></li>
+          <li><a href="#/refund">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Rapha's Counseling Center. All rights reserved.</span>
+      <span>Rapha · Hebrew, “to heal”</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const pages = Array.from(document.querySelectorAll('[data-page]'));
+  const navLinks = Array.from(document.querySelectorAll('[data-nav]'));
+  const menuBtn = document.getElementById('menuBtn');
+  const header = document.querySelector('header.site');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function parse(){
+    const h = location.hash.replace(/^#\/?/, '');
+    const parts = h.split('/').filter(Boolean);
+    return { page: parts[0] || 'home', anchor: parts[1] || null };
+  }
+  function route(){
+    const { page, anchor } = parse();
+    let found = false;
+    pages.forEach(p => {
+      const on = p.dataset.page === page;
+      p.classList.toggle('active', on);
+      if(on){ found = true; document.title = p.dataset.title.replace('&amp;','&'); }
+    });
+    if(!found){ pages[0].classList.add('active'); }
+    navLinks.forEach(a => {
+      if(a.dataset.nav === page) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    header.classList.remove('mobile-open'); menuBtn.setAttribute('aria-expanded','false');
+    prepReveal();
+    if(anchor){
+      const el = document.getElementById(anchor);
+      if(el){ el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'}); return; }
+    }
+    window.scrollTo({top:0, behavior:'auto'});
+  }
+
+  let io;
+  function prepReveal(){
+    if(reduce) return;
+    if(!io){
+      io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    }
+    const active = document.querySelector('[data-page].active');
+    if(!active) return;
+    active.querySelectorAll('.reveal').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if(r.top > window.innerHeight){ el.classList.add('pre'); io.observe(el); }
+      else el.classList.remove('pre');
+    });
+  }
+
+  menuBtn.addEventListener('click', () => {
+    const open = header.classList.toggle('mobile-open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && header.classList.contains('mobile-open')) menuBtn.click(); });
+
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+
+</body>
+</html>
