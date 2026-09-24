@@ -42,9 +42,33 @@ To use the real domain, open the project's **Settings → Domains**, add `raphas
 
 ## Before going live
 
-- **Booking links.** The six "Request to book" buttons currently point at the Wix booking calendar. Once Ann-Marie creates her Google Calendar appointment schedule, swap in that link, or paste the website embed code into the Book section to show live open times on the page.
-- **Terms and Refund Policy.** The old Wix pages carried Wix's placeholder legal text. Those two sections need real wording before launch.
+- **Booking links.** The six "Request to book" buttons open WhatsApp with the service already typed in, until a Google Calendar booking link is added. See the next section.
+- **Terms and Refund Policy.** Written with a 24-hour cancellation window and payment before each session. Adjust those two points in both sections if the practice works differently.
 - **Social links.** The old site's social icons pointed at Wix's own accounts. The footer here links only to WhatsApp and email until the real profiles exist.
+
+## Set up booking with Google Calendar
+
+Ann-Marie signs in to Google Calendar with galemarieblades@gmail.com, on a computer (the phone app can't create booking pages).
+
+1. Click **Create**, then **Appointment schedule**.
+2. Title: `Rapha's Counseling Center session`. Duration: 30 minutes for the consultation.
+3. Set her weekly hours, time zone, and a buffer between sessions if she wants one.
+4. Under **Booked appointment settings**, choose **Google Meet video conferencing** so each booking gets a video link.
+5. If her account offers custom questions on the booking form, add one: "Which service would you like?"
+6. Click **Save**, then **Share**, then copy the booking page link.
+
+Paste the link into the `BOOKING` block near the bottom of `index.html`:
+
+```js
+const BOOKING = {
+  all: 'https://calendar.app.google/XXXXXXXX',
+  ...
+};
+```
+
+`all` is used for every service. If she creates separate schedules for the longer sessions (for example a 90 minute one for couples), paste those under `couples`, `individual` and so on. Any service left empty falls back to WhatsApp, so nothing breaks while it's being set up.
+
+Every booking lands on her calendar and in her Gmail inbox, and the client gets a confirmation email with the Meet link. Turning on Google Calendar notifications on her phone gives her an alert for each new booking.
 
 ## Contact details used on the page
 
