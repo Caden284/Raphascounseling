@@ -43,7 +43,7 @@ To use the real domain, open the project's **Settings → Domains**, add `raphas
 ## Before going live
 
 - **Booking links.** The six "Request to book" buttons open WhatsApp with the service already typed in, until a Google Calendar booking link is added. See the next section.
-- **Terms and Refund Policy.** The old Wix pages carried Wix's placeholder legal text. Those two sections need real wording before launch.
+- **Terms and Refund Policy.** Written with a 24-hour cancellation window and payment before each session. Adjust those two points in both sections if the practice works differently.
 - **Social links.** The old site's social icons pointed at Wix's own accounts. The footer here links only to WhatsApp and email until the real profiles exist.
 
 ## Set up booking with Google Calendar
